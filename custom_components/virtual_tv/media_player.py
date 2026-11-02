@@ -5,6 +5,7 @@ from homeassistant.components.media_player import (
     MediaPlayerDeviceClass,
     MediaPlayerEntity,
     MediaPlayerEntityFeature,
+    MediaPlayerState,
 )
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
@@ -33,9 +34,9 @@ class VirtualTV(MediaPlayerEntity):
         MediaPlayerEntityFeature.TURN_ON | MediaPlayerEntityFeature.TURN_OFF
     )
     _attr_assumed_state = True
-    # No physical feedback: keep state unknown rather than claiming the TV
-    # is on/off after merely pressing a virtual button.
-    _attr_state = None
+    # Keep the HA entity available at all times. Yandex's state_unknown option
+    # hides/ignores this placeholder state and displays separate ON/OFF actions.
+    _attr_state = MediaPlayerState.IDLE
 
     def __init__(self, hass: HomeAssistant, entry: ConfigEntry, config: dict) -> None:
         """Initialize the virtual TV."""
