@@ -5,7 +5,6 @@ from homeassistant.components.media_player import (
     MediaPlayerDeviceClass,
     MediaPlayerEntity,
     MediaPlayerEntityFeature,
-    MediaPlayerState,
 )
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
@@ -34,8 +33,9 @@ class VirtualTV(MediaPlayerEntity):
         MediaPlayerEntityFeature.TURN_ON | MediaPlayerEntityFeature.TURN_OFF
     )
     _attr_assumed_state = True
-    # No physical state feedback: keep a fixed placeholder state.
-    _attr_state = MediaPlayerState.IDLE
+    # No physical feedback: keep state unknown rather than claiming the TV
+    # is on/off after merely pressing a virtual button.
+    _attr_state = None
 
     def __init__(self, hass: HomeAssistant, entry: ConfigEntry, config: dict) -> None:
         """Initialize the virtual TV."""
