@@ -1,0 +1,33 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Virtual TV",
+        "description": "Create a virtual TV. ON and OFF commands press separate input_button entities.",
+        "data": {
+          "name": "Device name",
+          "power_on_button": "POWER ON button",
+          "power_off_button": "POWER OFF button"
+        }
+      }
+    },
+    "error": {
+      "buttons_must_be_different": "Choose two different input_button entities."
+    },
+    "abort": {
+      "already_configured": "Virtual TV is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Virtual TV settings",
+        "data": {
+          "name": "Device name",
+          "power_on_button": "POWER ON button",
+          "power_off_button": "POWER OFF button"
+        }
+      }
+    }
+  }
+}
