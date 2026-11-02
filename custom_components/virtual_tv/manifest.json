@@ -4,6 +4,7 @@
   "codeowners": ["@7290903"],
   "config_flow": true,
   "documentation": "https://github.com/7290903/tv_ha",
-  "iot_class": "calculated",
+  "issue_tracker": "https://github.com/7290903/tv_ha/issues",
+  "iot_class": "assumed_state",
   "version": "1.0.0"
 }
