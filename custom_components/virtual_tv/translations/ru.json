@@ -1,0 +1,33 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Виртуальный телевизор",
+        "description": "Создаёт виртуальный media_player. Команды включения и выключения нажимают разные input_button.",
+        "data": {
+          "name": "Имя устройства",
+          "power_on_button": "Кнопка POWER ON",
+          "power_off_button": "Кнопка POWER OFF"
+        }
+      }
+    },
+    "error": {
+      "buttons_must_be_different": "Выберите две разные кнопки input_button."
+    },
+    "abort": {
+      "already_configured": "Виртуальный телевизор уже настроен."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Настройки виртуального телевизора",
+        "data": {
+          "name": "Имя устройства",
+          "power_on_button": "Кнопка POWER ON",
+          "power_off_button": "Кнопка POWER OFF"
+        }
+      }
+    }
+  }
+}
